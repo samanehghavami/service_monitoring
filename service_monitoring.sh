@@ -1,5 +1,5 @@
 #!/bin/bash
-SERVICES=(nginx httpd java)
+SERVICES=(nginx httpd sshd)
 for service in ${SERVICES[@]}; do
   if systemctl list-units --all --full | grep $service ; then
     systemctl status $service > /tmp/service
